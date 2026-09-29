@@ -11,7 +11,7 @@ public class PaymentService {
                 "Processing payment for order: " + orderId
         );
 
-        return quantity <= 0;
+        return quantity <= 3;
     }
 
 }

@@ -84,7 +84,9 @@ public class InventoryEventConsumer {
                             event.quantity(),
                             "PAYMENT_DECLINED"
                     );
-
+            System.out.println(
+                    "PAYMENT_FAILED: "+ event.orderId()
+            );
             paymentEventProducer.sendPaymentFailed(
                     paymentFailedEvent
             );

@@ -67,6 +67,9 @@ public class InventoryEventConsumer {
             paymentEventProducer.sendPaymentCompleted(
                     paymentCompletedEvent
             );
+            System.out.println(
+                    "sendPaymentCompleted: "+ paymentCompletedEvent.orderId()
+            );
         }
     }
 }

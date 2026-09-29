@@ -3,6 +3,7 @@ package com.mohammed.payment.messaging;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mohammed.payment.messaging.event.PaymentCompletedEvent;
+import com.mohammed.payment.messaging.event.PaymentFailedEvent;
 import com.mohammed.payment.messaging.event.StockReservedEvent;
 import com.mohammed.payment.service.PaymentService;
 import jakarta.enterprise.context.ApplicationScoped;

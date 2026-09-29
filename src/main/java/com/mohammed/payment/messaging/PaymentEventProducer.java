@@ -1,6 +1,7 @@
 package com.mohammed.payment.messaging;
 
 import com.mohammed.payment.messaging.event.PaymentCompletedEvent;
+import com.mohammed.payment.messaging.event.PaymentFailedEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;

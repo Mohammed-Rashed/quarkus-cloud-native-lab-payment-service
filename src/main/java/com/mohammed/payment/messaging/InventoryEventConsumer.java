@@ -48,7 +48,7 @@ public class InventoryEventConsumer {
         );
 
         boolean paymentSuccess =
-                paymentService.processPayment(event.orderId());
+                paymentService.processPayment(event.orderId(),event.quantity());
 
         System.out.println(
                 "Payment result: " + paymentSuccess
@@ -69,6 +69,23 @@ public class InventoryEventConsumer {
             );
             System.out.println(
                     "sendPaymentCompleted: "+ paymentCompletedEvent.orderId()
+            );
+        }else {
+
+            PaymentFailedEvent paymentFailedEvent =
+                    new PaymentFailedEvent(
+                            UUID.randomUUID(),
+                            "PAYMENT_FAILED",
+                            Instant.now(),
+                            1,
+                            event.orderId(),
+                            event.productId(),
+                            event.quantity(),
+                            "PAYMENT_DECLINED"
+                    );
+
+            paymentEventProducer.sendPaymentFailed(
+                    paymentFailedEvent
             );
         }
     }

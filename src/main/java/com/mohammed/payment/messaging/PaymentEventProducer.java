@@ -19,4 +19,13 @@ public class PaymentEventProducer {
         );
     }
 
+    public void sendPaymentFailed(PaymentFailedEvent event) {
+        emitter.send(
+                Record.of(
+                        event.orderId().toString(),
+                        event
+                )
+        );
+    }
+
 }
